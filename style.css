@@ -1,0 +1,27 @@
+body  {
+	background-image: url(images/wallpaper-mario.jpg);
+	background-repeat: no-repeat;
+	background-size: 100%; 
+}
+
+.top-header {
+	font-family: Impact, Haettenschweiler, "Franklin Gothic Bold", "Arial Black", "sans-serif";
+	text-align: center;
+	font-size: 6em;
+	text-decoration: none;	
+	
+}
+
+.trump-header {
+	font-family: Impact, Haettenschweiler, "Franklin Gothic Bold", "Arial Black", "sans-serif";
+	text-align: center;
+	font-size: 9em;
+	color: green;
+	text-shadow: 5px 10px 5px black; 
+	
+}
+.name {
+	font-family: Baskerville, "Palatino Linotype", Palatino, "Century Schoolbook L", "Times New Roman", "serif";
+	text-align: center;
+	color: lavender;
+}
