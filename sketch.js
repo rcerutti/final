@@ -4,7 +4,9 @@ var oranges = [];
 var wallpaper;
 var mexican;
 var trump = [];
-//var trump;
+var headIndex;
+var soundIndex;
+var mySound;
 
 function preload(){
   wallpaper = loadImage('images/wallpaper-mario.jpg');
@@ -15,26 +17,29 @@ function preload(){
   trump[3] = loadImage('images/trump3.png');
   trump[4] = loadImage('images/trump4.png');
   trump[5] = loadImage('images/trump5.png');
-    // for (var i = 0; i < 6; i++){
-    //   trump[i] = loadImage('images/trump' + i + '.png');
-    // }  
+  mySound = loadSound("sounds/mySound0.mp3");
+  // mySound[1] = loadSound('sounds/mySound1.mp3');
+  // mySound[2] = loadSound('sounds/mySound2.mp3');
+  // mySound[3] = loadSound('sounds/mySound3.mp3');
+  // mySound[4] = loadSound('sounds/mySound4.mp3');
+  // mySound[5] = loadSound('sounds/mySound5.mp3');
 }
 
-//[trump0, trump1, trump2, trump3, trump4, trump5]
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
+  mySound.setVolume(0.1);
   ship = new Ship();
-  // drop = new Drop(width/2, height/2);
   for (var i = 0; i < 6; i++) {
-    head[i] = new Head(i*80+80, 10, i);
+    headIndex = int(random(0, 5));
+    head[i] = new Head(i*80+80, 10, headIndex );
   }
 }
 
 function draw() {
   background(wallpaper);
   ship.show();
-  ship.move();
+  ship.move();  
 
   for (var i = 0; i < oranges.length; i++) {
     oranges[i].show();
@@ -42,6 +47,8 @@ function draw() {
     for (var j = 0; j < head.length; j++) {
       if (oranges[i].hits(head[j])) {
         head[j].change();
+        soundIndex = int(random(0, 5));
+        mySound[soundIndex].play();
         oranges[i].evaporate();
       }
     }
