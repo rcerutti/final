@@ -5,8 +5,8 @@ var wallpaper;
 var mexican;
 var trump = [];
 var headIndex;
-var soundIndex;
-var mySound;
+//var soundIndex;
+var mySound = [];
 
 function preload(){
   wallpaper = loadImage('images/wallpaper-mario.jpg');
@@ -17,18 +17,18 @@ function preload(){
   trump[3] = loadImage('images/trump3.png');
   trump[4] = loadImage('images/trump4.png');
   trump[5] = loadImage('images/trump5.png');
-  mySound = loadSound("sounds/mySound0.mp3");
-  // mySound[1] = loadSound('sounds/mySound1.mp3');
-  // mySound[2] = loadSound('sounds/mySound2.mp3');
-  // mySound[3] = loadSound('sounds/mySound3.mp3');
-  // mySound[4] = loadSound('sounds/mySound4.mp3');
-  // mySound[5] = loadSound('sounds/mySound5.mp3');
+  mySound[0] = loadSound("sounds/mySound0.mp3");
+  mySound[1] = loadSound('sounds/mySound1.mp3');
+  mySound[2] = loadSound('sounds/mySound2.mp3');
+  mySound[3] = loadSound('sounds/mySound3.mp3');
+  mySound[4] = loadSound('sounds/mySound4.mp3');
+  mySound[5] = loadSound('sounds/mySound5.mp3');
 }
 
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  mySound.setVolume(0.1);
+  //mySound.setVolume(0.1);
   ship = new Ship();
   for (var i = 0; i < 6; i++) {
     headIndex = int(random(0, 5));

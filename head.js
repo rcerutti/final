@@ -1,7 +1,7 @@
 function Head(x, y, num) {
   this.x = x;
   this.y = y;
-  this.r = 100;
+  this.r = 150;
   this.xdir = 2;
   this.n = num;
   
